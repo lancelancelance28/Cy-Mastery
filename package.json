@@ -4,7 +4,8 @@
   "description": "Cypress Test Automation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo",
+    "login-test": "npx cypress run  --spec 'cypress/e2e/Login.cy.js' --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -16,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/lancelancelance28/Cy-Mastery/issues"
   },
-  "homepage": "https://github.com/lancelancelance28/Cy-Mastery#readme",
-  "dependencies": {
-    "cypress": "^14.2.1"
-  }
+  "homepage": "https://github.com/lancelancelance28/Cy-Mastery#readme"
 }
