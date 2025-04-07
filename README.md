@@ -74,3 +74,8 @@ npm run test
 - **Login Test:** Automates the login functionality using both valid and invalid credentials on the Saucedemo website.
 - **Headless Mode:** Runs the tests without opening the browser window, speeding up the test execution.
 - **Headed Mode:** Runs the tests with the browser window open, which is helpful for debugging and visually verifying the test actions.
+
+---
+### Version
+
+- **This runs in Cypress Version 14.2.1 and Node Version v22.14.0** 
