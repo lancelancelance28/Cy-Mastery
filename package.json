@@ -4,7 +4,7 @@
   "description": "Cypress Test Automation",
   "main": "index.js",
   "scripts": {
-    "test": "echo",
+    "test": "npx cypress open",
     "login-test": "npx cypress run  --spec 'cypress/e2e/Login.cy.js' --browser chrome"
   },
   "repository": {
