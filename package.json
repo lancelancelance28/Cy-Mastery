@@ -6,7 +6,6 @@
   "scripts": {
     "test": "npx cypress open",
     "login-test": "npx cypress run --spec 'cypress/e2e/Login.cy.js' --browser chrome"
-    
   },
   "repository": {
     "type": "git",
@@ -18,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/lancelancelance28/Cy-Mastery/issues"
   },
-  "homepage": "https://github.com/lancelancelance28/Cy-Mastery#readme"
+  "homepage": "https://github.com/lancelancelance28/Cy-Mastery#readme",
+  "devDependencies": {
+    "cypress": "^14.2.1"
+  }
 }
