@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
-    "login-test": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --spec 'cypress/e2e/Login.cy.js' --browser chrome"
+    "login-test": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --spec 'cypress/e2e/Login.cy.js' --browser chrome",
+    "flow": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --spec 'cypress/e2e/EcomFlow.cy.js' --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "homepage": "https://github.com/lancelancelance28/Cy-Mastery#readme",
   "devDependencies": {
     "cypress": "^14.2.1"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }
