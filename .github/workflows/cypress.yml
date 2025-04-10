@@ -10,7 +10,10 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
       
-    
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,12 +36,6 @@ jobs:
 
       - name: Run Login.Cy Test
         run: npm run login-test
-        env:
-          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Ecom Flow Test
         run: npm run flow
-        env:
-          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
