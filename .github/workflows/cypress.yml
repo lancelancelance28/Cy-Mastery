@@ -39,3 +39,6 @@ jobs:
 
       - name: Run Ecom Flow Test
         run: npm run flow
+
+      - name: Run Parabank Test
+        run: npm run Parabank
