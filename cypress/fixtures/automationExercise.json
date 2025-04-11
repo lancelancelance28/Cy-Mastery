@@ -1,0 +1,18 @@
+{
+    "name": "TestUser",
+    "email": "testuser_<timestamp>@mail.com",
+    "password": "password123",
+    "firstName": "Test",
+    "lastName": "User",
+    "address": "123 Cypress St",
+    "country": "Canada",
+    "state": "Ontario",
+    "city": "Toronto",
+    "zipcode": "M4B1B3",
+    "mobile": "1234567890",
+    "cardName": "Test User",
+    "cardNumber": "4111111111111111",
+    "cvc": "123",
+    "expiryMonth": "12",
+    "expiryYear": "2026"
+  }
