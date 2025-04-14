@@ -85,7 +85,6 @@ Cypress.Commands.add('addToCart', (productTestId) => {
       win.localStorage.setItem('cart-contents', cart);
     });
   });
-
   Cypress.Commands.add('AutomationExerciseRegister', (userData) => {
     cy.get('[data-qa="signup-name"]').type(userData.name);
     cy.get('[data-qa="signup-email"]').type(userData.email);
@@ -119,7 +118,17 @@ Cypress.Commands.add('addToCart', (productTestId) => {
     cy.get('[data-qa="cvc"]').type(userData.cvc);
     cy.get('[data-qa="expiry-month"]').type(userData.expiryMonth);
     cy.get('[data-qa="expiry-year"]').type(userData.expiryYear);
-    cy.get('[data-qa="pay-button"]').click();
+
+    cy.get('form#payment-form').then(($form) => {
+      const rawForm = $form[0];
+      rawForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+      }, { once: true }); 
+    });
+
+    cy.contains('Pay and Confirm Order').click();
+    cy.contains('Your order has been placed successfully!').should('be.visible');
+    cy.contains('Pay and Confirm Order').click();
     cy.contains('Order Placed!').should('be.visible');
   });
 
