@@ -1,6 +1,6 @@
 
 
-#  Saucedemo Website Automation with Cypress
+#  Website Automation with Cypress
 
 This is a sample test automation project for **Saucedemo Swag Labs** using the **Cypress** framework. It contains tests for the **Login** functionality and offers flexibility to run them in **headless** and **headed** modes. 🌐
 
