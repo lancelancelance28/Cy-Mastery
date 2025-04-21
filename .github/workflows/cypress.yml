@@ -35,8 +35,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Automation Exercise Test
-        run: npm run AutoExercise
+      - name: Run all spec files
+        run: npx cypress run
 
       # Step 6: Archive Results Report
       - name: Cypress Regression E2E Test Report

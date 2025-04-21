@@ -24,7 +24,8 @@
   "homepage": "https://github.com/lancelancelance28/Cy-Mastery#readme",
   "devDependencies": {
     "@faker-js/faker": "^9.6.0",
-    "cypress": "^14.2.1"
+    "cypress": "^14.2.1",
+    "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
     "cypress-mochawesome-reporter": "^3.8.2"

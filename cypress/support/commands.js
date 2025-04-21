@@ -1,3 +1,4 @@
+/* -------------------------------------- Sauce Demo  -------------------------------------- */
 Cypress.Commands.add('auth', (username, password) => {
 
     cy.visit('https://www.saucedemo.com/', {timeout: 240000})
@@ -43,25 +44,30 @@ Cypress.Commands.add('addToCart', (productTestId) => {
     cy.get('.complete-header').should('contain', 'Thank you for your order!')
   });
 
-
-  Cypress.Commands.add('Register', (customerData) => {
-    
-    cy.get('input[id="customer.firstName"]').type(customerData.firstName);
-    cy.get('input[id="customer.lastName"]').type(customerData.lastName);
-    cy.get('input[id="customer.address.street"]').type(customerData.street);
-    cy.get('input[id="customer.address.city"]').type(customerData.city);
-    cy.get('input[id="customer.address.state"]').type(customerData.state);
-    cy.get('input[id="customer.address.zipCode"]').type(customerData.zipCode);
-    cy.get('input[id="customer.phoneNumber"]').type(customerData.phoneNumber);
-    cy.get('input[id="customer.ssn"]').type(customerData.ssn);
-    cy.get('input[id="customer.username"]').type(customerData.username);
-    cy.get('input[id="customer.password"]').type(customerData.password);
-    cy.get('input[id="repeatedPassword"]').type(customerData.password);
-
-    cy.get('input[type="submit"][value="Register"]').click();
-
+  //Sauce Demo Persisten Cart
+  Cypress.Commands.add('saveCart', () => {
+    cy.window().then((win) => {
+      const cart = win.localStorage.getItem('cart-contents') || '[]';
+      Cypress.env('savedCart', cart);
+    });
+  });
+//Sauce Demo Persistent Cart
+  Cypress.Commands.add('restoreCart', () => {
+    const cart = Cypress.env('savedCart') || '[]';
+    cy.window().then((win) => {
+      win.localStorage.setItem('cart-contents', cart);
+    });
   });
 
+/* -------------------------------------- Parabank   -------------------------------------- */
+import registrationPage from "../pages/registration.page";
+Cypress.Commands.add('fillRegistrationForm', (customerData = generateCustomerData()) => {
+  registrationPage.fillSignUpForm(customerData);
+  registrationPage.submitSignUpForm();
+  registrationPage.verifySignUpSuccess(customerData.username);
+});
+
+//Parabank Login 
   Cypress.Commands.add('Login', (username,password) => {
     
     cy.visit('https://parabank.parasoft.com/parabank/admin.htm')
@@ -72,19 +78,7 @@ Cypress.Commands.add('addToCart', (productTestId) => {
   });
 
 
-  Cypress.Commands.add('saveCart', () => {
-    cy.window().then((win) => {
-      const cart = win.localStorage.getItem('cart-contents') || '[]';
-      Cypress.env('savedCart', cart);
-    });
-  });
-
-  Cypress.Commands.add('restoreCart', () => {
-    const cart = Cypress.env('savedCart') || '[]';
-    cy.window().then((win) => {
-      win.localStorage.setItem('cart-contents', cart);
-    });
-  });
+  /* -------------------------------------- Automation Exercise  -------------------------------------- */
   Cypress.Commands.add('AutomationExerciseRegister', (userData) => {
     cy.get('[data-qa="signup-name"]').type(userData.name);
     cy.get('[data-qa="signup-email"]').type(userData.email);
@@ -164,11 +158,10 @@ Cypress.Commands.add('addToCart', (productTestId) => {
   Cypress.Commands.add('AutomationExerciseDeleteAccount', () => {
     
     cy.contains('Delete Account').click();
-
-    // Verify account deleted
     cy.contains('Account Deleted!').should('be.visible');
     cy.contains('Continue').click();
   });
+
   Cypress.Commands.add('AutomationExerciseLogin', (userData) => {
     
     cy.get('a[href="/login"]').contains('Signup / Login').click();
