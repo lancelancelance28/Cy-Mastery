@@ -8,13 +8,12 @@ describe('Parabank User Flow - Registration, Login, Logout', () => {
 
 
     before(() => {
-        cy.fixture('Static/customerData').then((data) => {
+        cy.fixture('Static/CustomerData').then((data) => {
           customerData = data;
         });
         cy.visit('https://parabank.parasoft.com/parabank/admin.htm')
         cy.get('button[name="action"][value="CLEAN"]').click();
         cy.visit('https://parabank.parasoft.com/parabank/register.htm')
-        
       });
 
     it('Successfully Register to the Parabank Website', () => {
