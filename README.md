@@ -53,10 +53,10 @@ The test suite includes a login feature test that can be executed in both **head
 
 ### 🧑‍💻 Headless Mode (No Browser UI)
 
-Run the login test in headless mode to execute the test without launching the browser's UI, for faster execution:
+Run all the tests in headless mode to execute the test without launching the browser's UI, for faster execution:
 
 ```bash
-npm run login-test
+npx cypress run
 ```
 
 ### 🖥️ Headed Mode (With Browser UI)
@@ -64,14 +64,13 @@ npm run login-test
 In **headed mode**, the browser runs with a visible UI. This is useful for debugging and visual confirmation of test actions. To run the login test in headed mode:
 
 ```bash
-npm run test
+npx cypress open
 ```
 
 ---
 
 ## ✨ Features
 
-- **Login Test:** Automates the login functionality using both valid and invalid credentials on the Saucedemo website.
 - **Headless Mode:** Runs the tests without opening the browser window, speeding up the test execution.
 - **Headed Mode:** Runs the tests with the browser window open, which is helpful for debugging and visually verifying the test actions.
 
