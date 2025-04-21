@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-21T05:27:03.620Z",
+    "end": "2025-04-21T05:27:06.663Z",
+    "duration": 3043,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f299d240-ec43-47ca-9792-d23e43d3104c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\SauceDemo\\Login.cy.js",
+      "file": "cypress\\e2e\\SauceDemo\\Login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0ffc1549-b4d3-421f-b349-a6b9d228e67e",
+          "title": "Sauce Demo Login Module",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login using Valid Credentials",
+              "fullTitle": "Sauce Demo Login Module Login using Valid Credentials",
+              "timedOut": null,
+              "duration": 1094,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.get('[data-test=\"username\"]').type('standard_user');\ncy.get('[data-test=\"password\"]').type('secret_sauce');\ncy.get('[data-test=\"login-button\"]').click();\ncy.contains('Swag Labs').should('be.visible');\ncy.url().should('include', '/inventory.html');",
+              "err": {},
+              "uuid": "9128bd29-1ecd-4944-a3bc-cc7e0f5e4a14",
+              "parentUUID": "0ffc1549-b4d3-421f-b349-a6b9d228e67e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login using Invalid Credentials",
+              "fullTitle": "Sauce Demo Login Module Login using Invalid Credentials",
+              "timedOut": null,
+              "duration": 931,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.get('[data-test=\"username\"]').type('standard_user');\ncy.get('[data-test=\"password\"]').type('secret_sauce1');\ncy.get('[data-test=\"login-button\"]').click();\ncy.get('[data-test=\"error\"]').should('be.visible').and('contain', 'do not match');",
+              "err": {},
+              "uuid": "03bb9b78-d88f-4b66-838a-e6694017ba6b",
+              "parentUUID": "0ffc1549-b4d3-421f-b349-a6b9d228e67e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9128bd29-1ecd-4944-a3bc-cc7e0f5e4a14",
+            "03bb9b78-d88f-4b66-838a-e6694017ba6b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2025,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Regression Testing Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
