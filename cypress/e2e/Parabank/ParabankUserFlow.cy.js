@@ -4,13 +4,24 @@ describe('Parabank User Flow - Registration, Login, Logout', () => {
 
     const fakeUser= generateFakeUser()
 
-    let customerData;
+    const customerData = {
+      firstName: 'Juan',
+      lastName: 'Perez',
+      street: '1234 Elm St',
+      city: 'Madrid',
+      state: 'Madrid',
+      zipCode: '28001',
+      phoneNumber: '612345678',
+      ssn: '123-45-6789',
+      username: 'juanperez123',
+      password: 'Password123!',
+    };
 
 
     before(() => {
-        cy.fixture('Static/CustomerData').then((data) => {
-          customerData = data;
-        });
+        // cy.fixture('Static/CustomerData').then((data) => {
+        //   customerData = data;
+        // });
         cy.visit('https://parabank.parasoft.com/parabank/admin.htm')
         cy.get('button[name="action"][value="CLEAN"]').click();
         cy.visit('https://parabank.parasoft.com/parabank/register.htm')
