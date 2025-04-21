@@ -8,7 +8,7 @@ describe('Parabank User Flow - Registration, Login, Logout', () => {
 
 
     before(() => {
-        cy.fixture('static/customerData').then((data) => {
+        cy.fixture('Static/customerData').then((data) => {
           customerData = data;
         });
         cy.visit('https://parabank.parasoft.com/parabank/admin.htm')
