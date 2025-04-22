@@ -1,4 +1,4 @@
-import generateUserData from "../../support/automationExerciseFaker";
+import { generateUserData } from '../../support/automationExerciseFaker';
 
 const getDate = () => {
   const now = new Date();
@@ -6,7 +6,7 @@ const getDate = () => {
 };
 
 describe('AutomationExercise Test Case 14,15,16', () => {
-  const UserFake = generateUserData()
+  const UserFake = generateUserData();
   beforeEach(() => {
     cy.visit('http://automationexercise.com');
     cy.writeFile('cypress/fixtures/userData.json', UserFake);
