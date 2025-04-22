@@ -5,6 +5,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   projectId: "2aidwb",
+  retries: 3,
   reporter:"cypress-mochawesome-reporter",
   reporterOptions: {
     charts: true,
@@ -14,6 +15,7 @@ module.exports = defineConfig({
     saveAllAttempts: false,
   },
   e2e: {
+    baseUrl: process.env.API_BASE_URL || 'https://petstore.swagger.io/v2',
     setupNodeEvents(on, config) {
       const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
       on('before:run', async (details) => {

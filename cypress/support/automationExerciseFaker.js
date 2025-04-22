@@ -24,4 +24,16 @@ const generateUserData = () => {
   };
 };
 
-export default generateUserData;
+const generateFakeOrder = () => {
+  return {
+    id: faker.number.int({ min: 1000000000, max: 9999999999 }), // large random ID
+    petId: faker.number.int({ min: 1, max: 100 }), // assuming petId from 1 to 100
+    quantity: faker.number.int({ min: 1, max: 5 }),
+    shipDate: faker.date.soon().toISOString(),
+    status: 'placed', // you can also randomize from ['placed', 'approved', 'delivered'] if needed
+    complete: faker.datatype.boolean(),
+  };
+};
+
+export { generateUserData, generateFakeOrder };
+
