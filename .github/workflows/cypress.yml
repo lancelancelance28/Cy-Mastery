@@ -36,7 +36,7 @@ jobs:
         run: npm ci
 
       - name: Run all spec files
-        run: npx cypress run
+        run: npx cypress run --browser electron
 
       # Step 6: Archive Results Report
       - name: Cypress Regression E2E Test Report
