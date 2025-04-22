@@ -97,26 +97,7 @@ describe('Store API Tests - Swagger Petstore', () => {
         });
         
         /*-------------------------------------Delete Order-------------------------------------*/
-  after(() => {
-    // Before deleting, check if the order exists first
-    cy.api({
-      method: 'GET',
-      url: `${storePath}/order/${testOrder.id}`,
-      failOnStatusCode: false, // Don't fail if not found
-    }).then((response) => {
-      if (response.status === 200) {
-        // If the order exists, proceed to delete it
-        cy.api({
-          method: 'DELETE',
-          url: `${storePath}/order/${testOrder.id}`,
-        }).then((deleteResponse) => {
-          expect(deleteResponse.status).to.eq(200);
-        });
-      } else {
-        cy.log(`Order with ID ${testOrder.id} not found, skipping delete.`);
-      }
-    });
-  });
+  
   
 });
 
