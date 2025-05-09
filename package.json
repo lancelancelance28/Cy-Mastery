@@ -9,7 +9,12 @@
     "flow": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --spec 'cypress/e2e/EcomFlow.cy.js' --browser chrome",
     "elements": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --spec 'cypress/e2e/Elements.cy.js' --browser chrome",
     "Parabank": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --spec 'cypress/e2e/ParabankUserFlow.cy.js' --browser chrome",
-    "AutoExercise": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --spec 'cypress/e2e/AutomationExercise.cy.js' --browser chrome"
+    "AutoExercise": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --spec 'cypress/e2e/AutomationExercise.cy.js' --browser chrome",
+
+    "dataTable-qa": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --config-file cypress.config.qa.js --spec 'cypress/e2e/DataTable/dataTable.cy.js' --browser chrome",
+    "dataTable-staging": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --config-file cypress.config.staging.js --spec 'cypress/e2e/DataTable/dataTable.cy.js' --browser chrome",
+    "dataTable-prod": "npx cypress run --record --key dcfc9041-4c7c-4af8-94d1-33aaa8105646 --config-file cypress.config.prod.js --spec 'cypress/e2e/DataTable/dataTable.cy.js' --browser chrome"
+    
   },
   "repository": {
     "type": "git",
