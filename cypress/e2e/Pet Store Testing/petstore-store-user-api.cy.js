@@ -105,8 +105,8 @@ describe('User API Tests - Swagger Petstore', () => {
   const userPath = '/user';
 
   let user = {
-    id:'123',
-    username: 'johndoe',
+    id:'12333',
+    username: 'johndoe1',
     firstName: 'John',
     lastName: 'Doe',
     email: 'johndoe@example.com',
